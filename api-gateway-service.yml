@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: restaurant-service
+          uri: lb://restaurant-service
+          predicates:
+            - Path=/api/v1/**
+        - id: food-service
+          uri: lb://food-service
+          predicates:
+            - Path=/api/v1/food-service/**
+
+info:
+  app:
+    name: api-gateway-service
+    description: this is api-gateway-service for gateway related details
+    version: 1.0v
