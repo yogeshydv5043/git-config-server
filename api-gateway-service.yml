@@ -12,7 +12,7 @@ spring:
         - id: food-service
           uri: lb://food-service
           predicates:
-            - Path=/api/v1/**
+            - Path=/api/v1/food-service/**
     
     bus:
       enabled: true
