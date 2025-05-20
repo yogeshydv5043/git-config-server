@@ -1,0 +1,5 @@
+info:
+  app:
+    name: restaurant-service-dev
+    description: this is restaurant-service-dev for dev related details
+    version: 1.0v
