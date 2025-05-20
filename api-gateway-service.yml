@@ -12,7 +12,37 @@ spring:
         - id: food-service
           uri: lb://food-service
           predicates:
-            - Path=/api/v1/food-service/**
+            - Path=/api/v1/**
+    
+    bus:
+      enabled: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
 
 info:
   app:
